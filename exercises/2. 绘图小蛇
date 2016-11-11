@@ -1,0 +1,38 @@
+#引入turtle库,turtle是一个根据函数形成运动轨迹图的绘图库。
+
+import turtle
+
+#定义一个函数，一个函数相当于一个功能，由多个代码块组成。
+#需要通过调用函数名来实现其功能。
+#现在定义一个函数，内含四个参数：rad、angel、len、neckrad。
+
+def drawSnake(rad,angle,len,neckrad):
+    for i in range(len):
+    
+    #.circle代表以圆形轨迹爬行，rad参数表示圆半径，angle参数表示爬行弧度。
+        turtle.circle(rad,angle)
+        turtle.circle(-rad,angle)
+    turtle.circle(rad,angle/2)
+    
+    #.fd()=.forward()，此函数表示直线爬行，参数是爬行距离。
+    turtle.fd(rad)
+    turtle.circle(neckrad+1,180)
+    turtle.fd(rad*22)
+
+def main ():
+
+#启动一个以左上角为原点，→x轴↓y轴，的一个图形窗口，四个参数分别为窗口的长、宽、和原点的位置参数。
+    turtle.setup(1300,800,0,0)
+    
+    #这里我们设置一个小蛇的像素量，像素为30
+    pythonsize = 30
+    turtle.pensize(pythonsize)
+    
+    #设置小蛇的颜色
+    turtle.pencolor("blue")
+    
+    #启动时运行的方向，参数为数学里的角度，这里-40表示-40°，即开始向-40°方向爬行。
+    turtle.seth(-40)
+    drawSnake(40,80,5,pythonsize/2)
+
+main()
