@@ -1,0 +1,38 @@
+# 字符串处理方法练习
+
+str = "hello world"
+
+#小写字母转换大写字母
+print(str.upper())
+- HELLO WORLD
+
+#大写字母转换小写字母
+print(str.lower())
+- hello world
+
+#首字母大写
+print(str.capitalize())
+- Hello world
+
+#去掉两边空格
+#此示例两边没有空格，故不变
+print(str.strip(" ")) 
+- hello world
+
+# 按指定字符分割字符串 返回一个数组。
+#这里以中间空格为分割字符串
+print(str.split(" "))
+- ['hello', 'world']
+
+#判断是否为数字类型，返回false或ture
+print(str.isdigit())
+- false
+
+#搜索指定字符，返回指定字符在字符串中的位置信息
+print(str.find(" "))
+- 5
+
+#字符串替换
+#这里我们把中间一个空格替换为两个空格
+print(str.replace(" ","  "))
+- hello  world
