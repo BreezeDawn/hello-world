@@ -1,0 +1,34 @@
+#异常处理需要用到的是 try .. except .. finally
+#我的理解是try试着打印出结果，except 打印出其他结果的话（打印不出报错的话），打印出此结果。
+
+import math
+#首先定义函数，我们要养成码代码块的好习惯。
+def main():
+    print("this program finds the real solution to a quadratic.\n")
+    #试着打印出以下步骤后的结果
+    try:
+        a,b,c = eval(input("please enter the coefficients (a,b,c):"))
+        discroot = math.sqrt(b*b-4*a*c)
+        root1 = (-b+discroot)/(2*a)
+        root2 = (-b-discroot)/(2*a)
+        print("\nThe solutions are:",root1,root2)
+    #出现值错误的话
+    except ValueError as excOBJ :
+        if str(excOBJ) == "math domain error":
+            print("No Real Roots")
+        else:
+            print("You didn't give me the right number of coefficients.")
+     ##出现定义异常的话
+    except NameError:
+        print("\nYou didn't enter three number.")
+    #出现格式异常的话    
+    except TypeError:
+        print("\nYour inputs were not all numbers.")
+    #出现语法错误的话
+    except SyntaxError:
+        print("\nYour input was not in the correct form.Missing comma?")
+    #出现以上错误外的错误的话
+    except:
+        print("\nSomething went wrong, sorry!")
+        
+main()
