@@ -1,0 +1,24 @@
+#抛点计算
+
+#导入随机数库的随机数函数、数学库的平方根函数、时间库的时间计算函数
+from random import random
+from math import sqrt
+from time import  clock
+
+#思路：坐标系中分别创建一个x，y的矩形和x半径的圆，抛出1200个点
+darts = 1200
+hits = 0
+clock()
+#计算点到原点的距离，若小于半径，即在圆内，在圆内的点数+1
+for i in range(1,darts):
+    x,y = random(),random()
+    dist = sqrt(x**2 + y **2)
+    if dist <= 1.0:
+        hits = hits+1
+#计算π
+pi = 4*(hits/darts)
+print(pi)
+#计算算出π的时间
+print(clock())
+
+#抛点越多，计算越准
