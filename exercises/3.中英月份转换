@@ -1,0 +1,11 @@
+#输入数字月份，输出对应英文月份。很简单，就不解释了。
+
+months = "janfebmaraprmayjunjulaugsepoctnovdec"
+
+n = input("请输入月份数：")
+
+pos = (int(n)-1)*3
+
+monthabbrev = months[pos:pos+3]
+
+print("月份简写是："+monthabbrev+".")
