@@ -1,0 +1,17 @@
+#定义一个happy birthday 函数
+def happy():
+    print("happy birthday to you!")
+#定义sing 主函数，设一个名字参数，内部调用happy函数
+
+def sing(person):
+    happy()
+    happy()
+    print("happy birthday ,dear",person+"!")
+    happy()
+sing("DawnBreeze")
+
+- happy birthday to you!
+happy birthday to you!
+happy birthday ,dear DawnBreeze!
+happy birthday to you!
+ 
