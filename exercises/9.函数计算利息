@@ -1,0 +1,17 @@
+
+
+#定义利息计算函数
+def addinterest(balances,rate):
+    for i in range(len(balances)):
+        balances[i] = balances[i]*(1+rate)
+        
+#定义需要计算的值和利率值
+def test():
+    amounts = [1000,105,3500,739]
+    rate = 0.05
+    addinterest(amounts,rate)
+    print(amounts)
+    
+test()
+
+- [1050.0, 110.25, 3675.0, 775.95]
