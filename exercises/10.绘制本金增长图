@@ -1,0 +1,24 @@
+#为每一年绘制星号增长图
+def createTable (principal,apr):
+    for year in range(1,11):
+        principal = principal*(1+apr)
+        print("%2d" %year,end = "")
+        total =  caculateNum(principal)
+        print("*"*total)
+    print(" 0.0K     2.5K     5.0K     7.5K     10.0K")
+    
+#计算星号数量
+def caculateNum(principal):
+    total = int(principal*4/1000)
+    return total
+    
+    
+def main():
+    #输入本金、利率
+    print("this program plots the growth of a 10-year inverstment")
+    principal = eval(input("Enter the initial principal:"))
+    apr = eval(input("Enter the annualized interest rate:"))
+    #绘制图表
+    createTable(principal,apr)
+    
+main()
