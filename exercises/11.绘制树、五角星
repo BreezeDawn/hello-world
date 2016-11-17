@@ -1,0 +1,48 @@
+#啊啊啊写了好久的注释刷新没了啊啊啊
+#(┬＿┬)
+#1.绘制树
+from turtle import Turtle
+from time import sleep
+def tree(plist,l,a,f):
+    if l>5:
+        lst = []
+        for p in plist:
+            p.forward(l)
+            q = p.clone()
+            p.left(a)
+            q.right(a)
+            lst.append(p)
+            lst.append(q)
+        tree(lst,l*f,a,f)
+
+def maketree(x,y):
+    p = Turtle()
+    p.color("green")
+    p.pensize(5)
+    p.hideturtle()
+    p.getscreen().tracer(3,0)
+    p.left(90)
+    p.penup()
+    p.goto(x,y)
+    p.pendown()
+    t = tree([p],110,65,0.6375)
+def main():
+    maketree(20,20)
+    maketree(20,-250)
+    sleep(5)
+main()
+
+#2.绘制五角星
+from turtle import Turtle
+from time import sleep
+p = Turtle()
+p.speed(3)
+p.pensize(1)
+p.color("black","yellow")
+# p.fillcolor("red")
+p.begin_fill()
+for i in range(5):
+    p.forward(300)
+    p.right(144)
+p.end_fill()
+sleep(5)
